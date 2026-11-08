@@ -1,15 +1,19 @@
 import java.util.Scanner;
 public class TaskG {
-    public static long factorial(int n) {
-        long d = 1;
-        for (int i = 1; i <= n; i++) {
-            d = d * i;
-        }
-        return d;
-    }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        System.out.println("Factorial = " + factorial(n));
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] numbers = new int[n];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = in.nextInt();
+        }
+        for (int i = 0; i < n / 2; i++) {
+            int temp = numbers[i];
+            numbers[i] = numbers[n - 1 - i];
+            numbers[n - 1 - i] = temp;
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.print(numbers[i] + " ");
+        }
     }
 }
