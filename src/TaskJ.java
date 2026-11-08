@@ -1,17 +1,18 @@
 import java.util.Scanner;
 public class TaskJ {
-    public static int gcd(int a, int b) {
-        while (b != 0) {
-            int r = b;
-            b = a % b;
-            a = r;
-        }
-        return a;
-    }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        System.out.println("GCD = " + gcd(a, b));
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] numbers = new int[n];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = in.nextInt();
+        }
+        int max = numbers[0];
+        for (int i = 1; i < n; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+        System.out.println(max);
     }
 }
