@@ -1,22 +1,23 @@
 import java.util.Scanner;
 public class TaskO {
-    public static boolean isPalindrome(int n) {
-        int original = n;
-        int reverse = 0;
-        while (n > 0) {
-            int digit = n % 10;
-            reverse = reverse * 10 + digit;
-            n = n / 10;
-        }
-        return original == reverse;
-    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        if (isPalindrome(n)) {
-            System.out.println("Palindrome");
-        } else {
-            System.out.println("Not Palindrome");
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
         }
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            int j = i;
+            while (j < n && a[i] == a[j]) {
+                j++;
+            }
+            if (j - i >= 3) {
+                count += j - i;
+                i = j - 1;
+            }
+        }
+        System.out.println(count);
     }
 }
