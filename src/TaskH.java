@@ -1,17 +1,19 @@
 import java.util.Scanner;
 public class TaskH {
-    public static String decimalToBinary(int n) {
-        String binary = "";
-        while (n > 0) {
-            int d = n % 2;
-            binary = d + binary;
-            n = n / 2;
-        }
-        return binary;
-    }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        System.out.println("Binary = " + decimalToBinary(n));
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] numbers = new int[n];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = in.nextInt();
+        }
+        for (int i = 0; i < n - 1; i += 2) {
+            int temp = numbers[i];
+            numbers[i] = numbers[i + 1];
+            numbers[i + 1] = temp;
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.print(numbers[i] + " ");
+        }
     }
 }
