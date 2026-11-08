@@ -1,16 +1,18 @@
 import java.util.Scanner;
 public class TaskK {
-    public static int lcm(int a, int b) {
-        int num = a;
-        while (num % a != 0 || num % b != 0) {
-            num++;
-        }
-        return num;
-    }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        System.out.println("LCM = " + lcm(a, b));
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] numbers = new int[n];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = in.nextInt();
+        }
+        int count = 1;
+        for (int i = 1; i < n; i++) {
+            if (numbers[i] != numbers[i - 1]) {
+                count++;
+            }
+        }
+        System.out.println(count);
     }
-}
+}ё
