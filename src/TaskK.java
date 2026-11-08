@@ -15,4 +15,4 @@ public class TaskK {
         }
         System.out.println(count);
     }
-}ё
+}
