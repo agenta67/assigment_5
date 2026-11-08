@@ -1,16 +1,16 @@
 import java.util.Scanner;
-public class TaskC {
-    public static void printInvertedPyramid(int n) {
-        for (int i = n; i >= 1; i--) {
-            for (int j = 0; j < 2 * i - 1; j++) {
-                System.out.print("*");
+public class TaskC{
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] numbers = new int[n];
+        int sum = 0;
+        for(int i = 0; i < numbers.length; i++ ){
+            numbers[i] = in.nextInt();
+            if (numbers[i] > 0){
+                sum += 1;
             }
-            System.out.println();
         }
-    }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        printInvertedPyramid(n);
+        System.out.println(sum);
     }
 }
